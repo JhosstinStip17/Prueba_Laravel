@@ -12,19 +12,20 @@ class PlantillaController extends Controller
     public function index()
     {
         $club = Club::all();
-        $plant = Plantilla::all();
-        return view("plantilla_views.index", compact("plant"));
+        $plantillas = Plantilla::all();
+        return view("plantilla_views.index", compact("plantillas"),["club"=>$club]);
     }
     
     public function create()
     {
-        return view("plantilla_views.create");
+        $clubes = Club::all();
+        return view("plantilla_views.create", ["clubes"=>$clubes]);
     }
 
     public function store(Request $request)
     {
-        Plantilla::created($request->all(""));
-        return to_route("plantilla.store", $request->all(""));
+        Plantilla::create($request->all(""));
+        return to_route("plantilla.index" )->with("success","CREANDO CORRECTAMENTE");
     }
 
 

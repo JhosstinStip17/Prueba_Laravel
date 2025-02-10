@@ -22,3 +22,4 @@ Route::get('/', function () {
 // Rutas de Plantilla
 Route::get('plantilla',[PlantillaController::class, 'index'])->name('plantilla.index');
 Route::get('plantilla/create',[PlantillaController::class, 'create'])->name('plantilla.create');
+Route::post('plantilla',[PlantillaController::class, 'store'])->name('plantilla.store');
