@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClubController;
 use App\Http\Controllers\PlantillaController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,17 @@ Route::get('/', function () {
 });
 
 
+// rutas de club
+
+Route::get('/clubes', [ClubController::class, 'index'])->name('clubes.index');
+Route::get('/clubes/create', [ClubController::class, 'create'])->name('clubes.create');
+route::post('/clubes', [ClubController::class, 'store'])->name('clubes.store');
+// Route::delete('clubes/{id}',ClubController::class, function ($id) {});
+
+
 // Rutas de Plantilla
 Route::get('plantilla',[PlantillaController::class, 'index'])->name('plantilla.index');
 Route::get('plantilla/create',[PlantillaController::class, 'create'])->name('plantilla.create');
 Route::post('plantilla',[PlantillaController::class, 'store'])->name('plantilla.store');
+Route::get('plantilla', [PlantillaController::class, 'index'])->name('plantilla.index');
+Route::get('plantilla/create', [PlantillaController::class, 'create'])->name('plantilla.create');

@@ -14,7 +14,8 @@ class ClubController extends Controller
      */
     public function index()
     {
-        //
+        $clubs = Club::all();
+        return view("Clubes.index", compact("clubs"));
     }
 
     /**
@@ -24,7 +25,8 @@ class ClubController extends Controller
      */
     public function create()
     {
-        //
+        $clubs = Club::all();
+        return view("clubes.create");
     }
 
     /**
@@ -35,7 +37,8 @@ class ClubController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Club::create($request->all());
+        return to_route("clubes.index")->with("success", "Creado correctamente");
     }
 
     /**
