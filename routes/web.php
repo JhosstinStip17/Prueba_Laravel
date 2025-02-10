@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClubController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// rutas de club
+
+Route::get('/clubes', [ClubController::class, 'index'])->name('clubes.index');
+Route::get('/clubes/create', [ClubController::class, 'create'])->name('clubes.create');

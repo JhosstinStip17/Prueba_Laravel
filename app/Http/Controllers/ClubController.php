@@ -14,7 +14,8 @@ class ClubController extends Controller
      */
     public function index()
     {
-        //
+        $clubs = Club::all();
+        return view("Clubes.index", compact("clubs"));
     }
 
     /**
@@ -24,7 +25,8 @@ class ClubController extends Controller
      */
     public function create()
     {
-        //
+
+        return view("clubes.create");
     }
 
     /**
