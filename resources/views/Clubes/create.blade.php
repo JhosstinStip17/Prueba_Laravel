@@ -15,13 +15,14 @@
     <main>
 
 
-        <form action="" method="get">
 
+        <form action="{{route('clubes.store')}}" method="post">
+            @csrf
             <label for="Nombre">Nombre del club</label>
-            <input type="text" name"nombre" id="nombre">
+            <input type="text" name="nombre" id="nombre">
 
             <label for="ciudad"> Nombre de la ciudad</label>
-            <input type="text" name"ciudad" id="ciudad">
+            <input type="text" name="ciudad" id="ciudad">
 
             <button type="submit">Enviar</button>
 
