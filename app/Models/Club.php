@@ -9,6 +9,8 @@ class Club extends Model
 {
     use HasFactory;
 
+    protected $table = 'clubes';
+
     protected $fillable = [
         "nombre",
         "ciudad",

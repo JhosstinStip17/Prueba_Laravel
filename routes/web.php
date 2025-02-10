@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PlantillaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Rutas de Plantilla
+Route::get('plantilla',[PlantillaController::class, 'index'])->name('plantilla.index');
+Route::get('plantilla/create',[PlantillaController::class, 'create'])->name('plantilla.create');
