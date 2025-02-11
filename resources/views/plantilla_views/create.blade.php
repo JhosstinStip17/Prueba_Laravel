@@ -8,10 +8,10 @@
 
 <form action="{{route('plantilla.store')}}" method="post">
 
-    @crsf
+    @csrf
 
     @if($errors->any)
-        <div class="alert alert-danger">
+        <div class="alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{$error}}</li>
@@ -31,6 +31,7 @@
             <option value="{{$club->id}}">{{$club->nombre}}</option>
         @endforeach
     </select>
+    <br>
 
     <button type="sumbit" class="btn btn-success">
         Guardar

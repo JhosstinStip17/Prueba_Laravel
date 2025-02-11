@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\JugadorController;
 use App\Http\Controllers\PlantillaController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,5 +33,9 @@ route::post('/clubes', [ClubController::class, 'store'])->name('clubes.store');
 Route::get('plantilla',[PlantillaController::class, 'index'])->name('plantilla.index');
 Route::get('plantilla/create',[PlantillaController::class, 'create'])->name('plantilla.create');
 Route::post('plantilla',[PlantillaController::class, 'store'])->name('plantilla.store');
-Route::get('plantilla', [PlantillaController::class, 'index'])->name('plantilla.index');
-Route::get('plantilla/create', [PlantillaController::class, 'create'])->name('plantilla.create');
+
+// Rutas de Jugador
+
+Route::get( 'jugador', [JugadorController::class,'index'])->name('jugador.index');
+Route::get('jugador/create',[JugadorController::class, 'create'])->name('jugador.create');
+Route::post('jugador',[JugadorController::class, 'store'])->name('jugador.store');
