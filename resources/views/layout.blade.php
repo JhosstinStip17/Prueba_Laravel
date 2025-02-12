@@ -20,13 +20,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Clubes</a>
+                            <a class="nav-link" aria-current="page" href="{{route('clubes.index')}}">Clubes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('plantilla.index')}}">Plantillas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Jugadores</a>
+                            <a class="nav-link" href="{{route('jugador.index')}}">Jugadores</a>
                         </li>
                     </ul>
                 </div>

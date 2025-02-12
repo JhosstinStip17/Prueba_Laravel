@@ -3,78 +3,53 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jugador;
+use App\Models\plantilla;
 use Illuminate\Http\Request;
 
 class JugadorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index() {}
+    
+    public function index() 
+    {
+        $jugadores = Jugador::all();
+        $plantilla = plantilla::all();
+        return view("jugador_views.index", ["jugadores"=> $jugadores,"plantillas"=> $plantilla]);
+    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
-        //
+        $plantillas = plantilla::all();
+        return view("jugador_views.create", compact("plantillas"));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
-        //
+        Jugador::create($request->all());
+        return to_route("jugador.index")->with("success","AGREGADO CORRECTAMENTE");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Jugador  $jugador
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Jugador $jugador)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Jugador  $jugador
-     * @return \Illuminate\Http\Response
-     */
+  
     public function edit(Jugador $jugador)
     {
-        //
+        $jugadores = Jugador::all();
+        return view("jugador_views.index", compact("","jugadores"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Jugador  $jugador
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(Request $request, Jugador $jugador)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Jugador  $jugador
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Jugador $jugador)
     {
         //
